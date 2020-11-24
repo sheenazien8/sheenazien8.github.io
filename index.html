@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>sheenazien8 | Programming Is Not My Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/css" media="screen">
+      * {box-sizing: border-box}
+      body {
+        font-family: 'Space Mono', monospace;
+        width: 70%;
+        margin: 2em auto;
+      }
+      body p {
+        line-height: 1em;
+      }
+      .flex-container > div {
+        width: 50%;
+      }
+      .flex-container {
+        display: flex;
+      }
+
+      .flex-container .item-center {
+        align-self: center;
+        text-align: center;
+      }
+
+      .navbar {
+        width: 100%;
+        overflow: auto;
+      }
+
+      .navbar a {
+        float: left;
+        padding: 12px;
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+        width: 33.3333%; /* Four links of equal widths */
+        text-align: center;
+      }
+      .navbar a:hover {
+         background-color: #111;
+         color: white;
+      }
+
+      .navbar a.active {
+        background-color: #4CAF50;
+      }
+      .portfolio-div {
+        display: block;
+      }
+      .job-div {
+        display: none;
+      }
+      .contact-div {
+        display: none;
+      }
+      @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div>
+        <p>
+          <b>Name:</b> Sheena Muhammad Ali Zien.
+        </p>
+        <p>
+          <b>Main Programming:</b> PHP, Javascript, Nodejs.
+        </p>
+        <p>
+          <b>Main Framework:</b> Laravel, Express JS.
+        </p>
+        <p>
+          <b>Main Text Editor:</b> Vim.
+        </p>
+      </div>
+      <div class="item-center">
+        <h4>HI There, I'm PHP Programmer.</h4>
+      </div>
+    </div>
+    <hr>
+    <div class="navbar">
+      <a href="#portfolio" class="portfolio">Portfolio</a>
+      <a href="#job" class="job">Job</a>
+      <a href="#contact" class="contact">Contact</a>
+    </div>
+    <div class="portfolio-div">
+      <ul>
+        <li>
+          <a href="https://github.com/sheenazien8/hascrudactions">HascrudActions</a><span><b> WIP</b></span>
+          <div>CRUD tirelessly: Laravel Libray For creating CRUD actions with simple / thin controller</div>
+        </li>
+        <li>
+          <a href="https://github.com/lakasir/lakasir">Lakasir</a>
+          <div>
+            Lakasir is a free, open source and online Point Of Sale Software designed for small shop or retail. It is built with modern technologies such as Laravel, VueJS, Bootstrap 4, RESTful API etc.
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/lakasir/user-logging-activity">User Log Activity</a>
+          <div>
+            The lakasir/user-logging-activity package provides easy to use functions to log the activities of the users of your app. It can also automatically log model events. All activity will be stored in the activity_log table.
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/sheenazien8/zien-lite">Zien Lite</a>
+          <div>
+            PHP OOP native boilerplate: Zien Boilerplate is a mini MVC for manage small application, zien lite gives you a different experience when you've finished the lesson on PHP Object Oriented Programming
+          </div>
+        </li>
+      </ul>
+      <a href="https://github.com/sheenazien8" target="_blank">More...</a>
+    </div>
+
+    <div class="job-div">
+      <h3 style="text-align: center">Harga Diri Seorang Laki-laki Adalah Bekerja.</h3>
+    </div>
+    <div class="contact-div">
+      <ul>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=089638706830">Whatsapp</a>
+          <p>
+          (+62) 89638706830
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/sheena-zien-055635156/">Linkedin</a>
+          <p>
+             Sheena Zien
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="https://github.com/sheenazien8">Github Page</a>
+          <p>
+             sheenazien8
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="mailto:sheenazien08@gmail.com">Gmail</a>
+          <p>
+            sheenazien08@gmail.com
+          </p>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script charset="utf-8">
+    let linkPort = document.getElementsByClassName('portfolio')[0]
+    linkPort.style.backgroundColor = "#111";
+    linkPort.style.color = "white";
+    linkPort.addEventListener("click", function() {
+      linkPort.style.backgroundColor = "#111";
+      linkPort.style.color = "white";
+      linkJob.style.backgroundColor = "";
+      linkJob.style.color = "";
+      linkContact.style.backgroundColor = "";
+      linkContact.style.color = "";
+      document.getElementsByClassName('portfolio-div')[0].style.display = "block";
+      document.getElementsByClassName('job-div')[0].style.display = "none";
+      document.getElementsByClassName('contact-div')[0].style.display = "none";
+    })
+    let linkJob = document.getElementsByClassName('job')[0]
+    linkJob.addEventListener("click", function() {
+      linkPort.style.backgroundColor = "";
+      linkPort.style.color = "";
+      linkJob.style.backgroundColor = "#111";
+      linkJob.style.color = "white";
+      linkContact.style.backgroundColor = "";
+      linkContact.style.color = "";
+      document.getElementsByClassName('portfolio-div')[0].style.display = "none";
+      document.getElementsByClassName('job-div')[0].style.display = "block";
+      document.getElementsByClassName('contact-div')[0].style.display = "none";
+    })
+    let linkContact = document.getElementsByClassName('contact')[0]
+    linkContact.addEventListener("click", function() {
+      linkPort.style.backgroundColor = "";
+      linkPort.style.color = "";
+      linkJob.style.backgroundColor = "";
+      linkJob.style.color = "";
+      linkContact.style.backgroundColor = "#111";
+      linkContact.style.color = "white";
+      document.getElementsByClassName('portfolio-div')[0].style.display = "none";
+      document.getElementsByClassName('job-div')[0].style.display = "none";
+      document.getElementsByClassName('contact-div')[0].style.display = "block";
+    })
+  </script>
+</html>
