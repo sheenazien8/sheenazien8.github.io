@@ -38,20 +38,7 @@ export default function Home() {
 
   let skills = ['PHP', 'Javascript', 'Go Lang', 'CSS'];
 
-  let socials: IconLookup[] = [
-    {
-      prefix: 'fab',
-      iconName: 'github',
-    },
-    {
-      prefix: 'fab',
-      iconName: 'facebook',
-    },
-    {
-      prefix: 'fab',
-      iconName: 'instagram',
-    },
-  ];
+  let socials = ['/assets/github.svg', '/assets/facebook.svg', '/assets/instagram.svg'];
 
   const [projects, setProjects] = useState([
     {
@@ -60,7 +47,7 @@ export default function Home() {
       role: 'Full-stack Developer',
       open: true,
       bgColor: 'bg-primary',
-      assets: '../assets/simpelbudget.com.png',
+      assets: '/assets/simpelbudget.com.png',
     },
     {
       id: 'simpel-budget',
@@ -68,7 +55,7 @@ export default function Home() {
       role: 'Full-stack Developer',
       open: false,
       bgColor: 'bg-[#4F46E5]',
-      assets: '../assets/simpelbudget.com.png',
+      assets: '/assets/simpelbudget.com.png',
     },
     {
       id: 'youtube-downloader',
@@ -76,11 +63,11 @@ export default function Home() {
       role: 'Backend Developer',
       open: false,
       bgColor: 'bg-[#4F46E5]',
-      assets: '../assets/simpelbudget.com.png',
+      assets: '/assets/simpelbudget.com.png',
     },
   ]);
 
-  function hover(id: string) {
+  function mouseEnter(id: string) {
     const updatedProjects = projects.map((project) => {
       if (project.id === id) {
         return { ...project, open: true };
@@ -89,6 +76,9 @@ export default function Home() {
       }
     });
     setProjects(updatedProjects);
+  }
+
+  function mouseLeave(id: string) {
   }
 
   return (
@@ -114,9 +104,9 @@ export default function Home() {
           </nav>
           <div className="">
             <p className="text-gray-1 text-[210px] leading-none my-10 font-bold text-center">SHEENAZIEN</p>
-            <div className="bg-gradient-to-tr from-black-trans to-primary h-[570px] rounded-2xl grid grid-cols-3">
+            <div className="bg-primary h-[570px] rounded-2xl grid grid-cols-3">
               <div className="flex text-white mt-auto gap-x-8 px-8 py-10">
-                <div className="w-0.5 bg-gray-3"></div>
+                <div className="w-0.5 bg-gray-5"></div>
                 <p className="text-3xl font-bold w-4/5 leading-snug">FULL-STACK PROGRAMMER <br /> BASED IN INDONESIA</p>
               </div>
               <div className="col-span-2 flex justify-end">
@@ -124,14 +114,14 @@ export default function Home() {
                   <Image src="/assets/img.jpg" alt="img" className="inset-0 object-cover rounded-r-2xl" height={570} width={100} quality={100} style={{ width: '100%', height: 570 }} />
                   <div className="w-[500px] flex justify-between absolute bottom-16 px-10">
                     <button
-                      className="font-medium py-3 px-6 border border-primary text-primary rounded-full transition-all hover:bg-primary hover:text-white hover:scale-110">Download
+                      className="font-medium py-3 px-6 border border-gray-5 text-gray-5 rounded-full transition-all hover:bg-primary hover:text-white hover:scale-110 hover:border-primary">Download
                       CV</button>
                     <div className="">
                       {socials.map((social, index) =>
                         <button
                           key={index}
-                          className="rounded-full bg-gradient-to-tl from-black-trans to-primary h-12 w-12 text-white">
-                          <FontAwesomeIcon icon={social} />
+                          className="rounded-full h-12 w-12 text-white">
+                          <Image src={social} alt="" height={40} width={40} />
                         </button>
                       )}
                     </div>
@@ -182,20 +172,25 @@ export default function Home() {
               <div
                 key={project.id}
                 className={classNames(
-                  "h-[680px] w-1/4 rounded-xl cursor-pointer transition-all ease duration-1000 px-12 relative overflow-hidden",
+                  "h-[680px] w-1/4 rounded-xl cursor-pointer transition-all ease duration-500 px-12 relative overflow-hidden",
                   project.open ? 'w-11/12' : '',
                   project.bgColor
                 )}
-                onMouseEnter={() => hover(project.id)}
+                onMouseEnter={() => mouseEnter(project.id)}
+                onMouseLeave={() => mouseLeave(project.id)}
               >
-                <div className="flex justify-between py-5 px-8 bg-gray-1 rounded-2xl absolute top-3/4 w-[680px] transition-all"
-                  x-show="project.open" x-transition>
+                {/*button*/}
+                <div id={`project-${project.id}`}
+                  className={classNames(
+                    "flex justify-between py-5 px-8 bg-gray-1 rounded-2xl absolute top-3/4 w-[680px] transition-all ease duration-700",
+                    !project.open ? 'translate-x-52' : ''
+                  )}>
                   <div className="text-gray-6">
                     <p className="text-3xl font-bold">{project.name}</p>
                     <p className="text-xl">{project.role}</p>
                   </div>
                   <div
-                    className="bg-gradient-to-tr from-black-trans to-primary rounded-full h-16 w-16 flex justify-items-center items-center">
+                    className="bg-primary rounded-full h-16 w-16 flex justify-items-center items-center">
                     <svg width="46" height="46" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clipRule="evenodd"
                         d="M30.2725 23.7933C30.2654 23.9946 30.299 24.1953 30.3711 24.3834C30.4432 24.5715 30.5525 24.7431 30.6924 24.888C30.8323 25.0329 31 25.1482 31.1854 25.2269C31.3708 25.3057 31.5702 25.3462 31.7716 25.3462C31.973 25.3462 32.1724 25.3057 32.3578 25.2269C32.5433 25.1482 32.7109 25.0329 32.8508 24.888C32.9907 24.7431 33.1 24.5715 33.1721 24.3834C33.2443 24.1953 33.2778 23.9946 33.2707 23.7933V14.6009L33.2721 13.1004L31.773 13.1004L22.5806 13.1004C22.1874 13.1071 21.8125 13.2679 21.5367 13.5483C21.2608 13.8287 21.1062 14.2062 21.106 14.5995C21.1058 14.9928 21.2601 15.3705 21.5357 15.6511C21.8112 15.9318 22.186 16.093 22.5792 16.1L28.1512 16.1L13.4731 30.7781C13.1918 31.0594 13.0338 31.4409 13.0338 31.8388C13.0338 32.2366 13.1918 32.6181 13.4731 32.8994C13.7544 33.1807 14.1359 33.3388 14.5338 33.3388C14.9316 33.3388 15.3131 33.1807 15.5944 32.8994L30.2725 18.2213L30.2725 23.7933Z"
@@ -295,8 +290,8 @@ export default function Home() {
         </div>
         <div className="flex justify-center pb-5">
           {socials.map((social) =>
-            <button className="rounded-full bg-gray-2 h-12 w-12 text-white">
-              <FontAwesomeIcon icon={social} />
+            <button className="rounded-full h-12 w-12 text-white">
+              <Image src={social} alt="" height={40} width={40} />
             </button>
           )}
         </div>
