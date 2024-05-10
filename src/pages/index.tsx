@@ -107,8 +107,10 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
           )}>
             <div className="flex items-center gap-x-10 text-gray-1">
               <a className="font-bold text-2xl lg:block hidden" href="#">Sheenazien</a>
-              {navs.map(nav =>
-                <button className="text-sm relative after:content-[''] after:block after:-z-10 after:w-0 after:h-full after:rounded-lg after:absolute after:left-0 after:top-0 after:transition-all after:ease-in-out duration-150 after:bg-primary hover:after:w-full hover:text-white py-1 px-2"
+              {navs.map((nav, index) =>
+                <button
+                  key={index}
+                  className="text-sm relative after:content-[''] after:block after:-z-10 after:w-0 after:h-full after:rounded-lg after:absolute after:left-0 after:top-0 after:transition-all after:ease-in-out duration-150 after:bg-primary hover:after:w-full hover:text-white py-1 px-2"
                   onClick={() => scrollTo(nav.target_element_id)}
                   id={nav.id}>{nav.title}
                 </button>
@@ -357,9 +359,12 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-x-8">
-              {welcome?.articles?.map((post) =>
-                <Link href={`/article/${post.slug}`}>
-                  <div className="space-y-5 h-80">
+              {welcome?.articles?.map((post, index) =>
+                <Link
+                  key={index}
+                  href={`/article/${post.slug}`}>
+                  <div
+                    className="space-y-5 h-80">
                     <Image src={post.header_image_url}
                       alt={post.slug}
                       className="rounded-lg object-cover"
@@ -383,11 +388,13 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
       <footer className="bg-gray-1 mt-40">
         <div className="flex justify-center items-center py-20">
           <div className="max-w-4xl">
-            <p className="text-gray-3 md:text-6xl text-center font-bold"><span className="text-gray-5">CONTACT ME NOW </span>FOR
+            <p className="text-gray-3 md:text-6xl text-center font-bold">
+              <span className="text-gray-5">CONTACT ME NOW </span>FOR
               FURTHER
-              DISCUSSION!</p>
+              DISCUSSION!
+            </p>
             <p className="text-gray-3 text-xl text-center mb-10 mt-2.5">
-              I'm ready to help you make your project a reality by combining <br /> attractive design with powerful
+              I&apos;m ready to help you make your project a reality by combining <br /> attractive design with powerful
               functionality.
             </p>
             <div className="flex justify-center">
