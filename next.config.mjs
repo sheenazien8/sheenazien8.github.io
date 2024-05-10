@@ -8,7 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: process.env.API_HOST.replace('https://', '').replace('/api', ''),
+        hostname: process.env.API_HOST.replace('http://', '').replace('https://', '').replace('/api', ''),
         port: '',
         pathname: '/*',
       },

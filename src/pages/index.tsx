@@ -100,11 +100,11 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
     <div>
       <div className="container mx-auto grid grid-cols-1 gap-y-20 md:max-w-7xl w-11/12">
         <div className="" id="header">
-          <div className="w-full">
+          <div>
             {/* desktop nav */}
             <nav className={classNames(
               "sm:flex hidden justify-between items-center h-20 transition-all duration-200",
-              isScrolled ? 'fixed top-0 left-0 w-full bg-white shadow-md z-10 px-7 md:px-20 lg:px-[320px]' : ''
+              isScrolled ? 'fixed inset-0 w-full bg-white shadow-md z-10 xl:px-[5rem] md:px-[3rem] px-[1rem]' : ''
             )}>
               <div className="flex items-center gap-x-10 text-gray-1">
                 <a className="font-bold text-2xl lg:block hidden" href="#">Sheenazien</a>
