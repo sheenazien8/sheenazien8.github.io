@@ -100,43 +100,45 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
     <div>
       <div className="container mx-auto grid grid-cols-1 gap-y-20 md:max-w-7xl w-11/12">
         <div className="" id="header">
-          {/* desktop nav */}
-          <nav className={classNames(
-            "sm:flex hidden justify-between items-center h-20 transition-all duration-200",
-            isScrolled ? 'fixed top-0 left-0 w-full bg-white shadow-md z-10 px-7 lg:px-20' : ''
-          )}>
-            <div className="flex items-center gap-x-10 text-gray-1">
-              <a className="font-bold text-2xl lg:block hidden" href="#">Sheenazien</a>
-              {navs.map((nav, index) =>
-                <button
-                  key={index}
-                  className="text-sm relative after:content-[''] after:block after:-z-10 after:w-0 after:h-full after:rounded-lg after:absolute after:left-0 after:top-0 after:transition-all after:ease-in-out duration-150 after:bg-primary hover:after:w-full hover:text-white py-1 px-2"
-                  onClick={() => scrollTo(nav.target_element_id)}
-                  id={nav.id}>{nav.title}
-                </button>
-              )}
-            </div>
-            <div>
-              <a href="mailto:sheenazien08gmail.com"
-                className="py-3 px-8 border border-black rounded-3xl transition-all hover:bg-primary hover:text-white hover:border-primary">sheenazien08@gmail.com</a>
-            </div>
-          </nav>
-          {/* mobile nav */}
-          <nav className={classNames(
-            "md:hidden flex justify-between items-center h-14 transition-all duration-200",
-            isScrolled ? 'fixed top-0 left-0 w-full bg-white shadow-md z-10 px-4' : ''
+          <div className="w-full">
+            {/* desktop nav */}
+            <nav className={classNames(
+              "sm:flex hidden justify-between items-center h-20 transition-all duration-200",
+              isScrolled ? 'fixed top-0 left-0 w-full bg-white shadow-md z-10 px-7 md:px-20 lg:px-[320px]' : ''
+            )}>
+              <div className="flex items-center gap-x-10 text-gray-1">
+                <a className="font-bold text-2xl lg:block hidden" href="#">Sheenazien</a>
+                {navs.map((nav, index) =>
+                  <button
+                    key={index}
+                    className="text-sm relative after:content-[''] after:block after:-z-10 after:w-0 after:h-full after:rounded-lg after:absolute after:left-0 after:top-0 after:transition-all after:ease-in-out duration-150 after:bg-primary hover:after:w-full hover:text-white py-1 px-2"
+                    onClick={() => scrollTo(nav.target_element_id)}
+                    id={nav.id}>{nav.title}
+                  </button>
+                )}
+              </div>
+              <div>
+                <a href="mailto:sheenazien08gmail.com"
+                  className="py-3 px-8 border border-black rounded-3xl transition-all hover:bg-primary hover:text-white hover:border-primary">sheenazien08@gmail.com</a>
+              </div>
+            </nav>
+            {/* mobile nav */}
+            <nav className={classNames(
+              "md:hidden flex justify-between items-center h-14 transition-all duration-200",
+              isScrolled ? 'fixed top-0 left-0 w-full bg-white shadow-md z-10 px-4' : ''
 
-          )}>
-            <button onClick={() => setOpenNav(true)}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-              </svg>
-            </button>
-            <div>
-              <a href="mailto:sheenazien08gmail.com"
-                className="py-2 px-4 border border-black rounded-3xl transition-all hover:bg-primary hover:text-white hover:border-primary">sheenazien08@gmail.com</a>
-            </div>
-          </nav>
+            )}>
+              <button onClick={() => setOpenNav(true)}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                </svg>
+              </button>
+              <div>
+                <a href="mailto:sheenazien08gmail.com"
+                  className="py-2 px-4 border border-black rounded-3xl transition-all hover:bg-primary hover:text-white hover:border-primary">sheenazien08@gmail.com</a>
+              </div>
+            </nav>
+          </div>
           <div className={classNames(
             "fixed left-0 top-0 z-10 w-full bg-primary h-full md:hidden transition-all duration-700",
             openNav ? 'translate-x-0' : '-translate-x-full'
@@ -164,7 +166,7 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
             </div>
           </div>
           <div className="">
-            <p className="text-gray-1 text-[14.5vw] leading-none my-5 md:my-10 font-bold text-center">{welcome?.profile?.nickname}</p>
+            <p className="text-gray-1 text-[14.5vw] xl:text-[210px] leading-none my-5 md:my-10 font-bold text-center">{welcome?.profile?.nickname}</p>
             <div className="bg-primary h-[570px] rounded-2xl md:grid md:grid-cols-3">
               <div className="md:flex hidden text-white mt-auto gap-x-8 px-8 py-10">
                 <div className="w-0.5 bg-gray-5"></div>
