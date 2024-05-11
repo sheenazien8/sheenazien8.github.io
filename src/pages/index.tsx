@@ -5,6 +5,7 @@ import axios from "axios";
 import { InferGetServerSidePropsType } from "next";
 import Link from "next/link";
 import { Experience, Post, Profile, Project } from "@/types/type";
+import Head from "next/head";
 
 type Welcome = {
   profile: Profile;
@@ -98,6 +99,11 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
 
   return (
     <div>
+      <Head>
+        <meta property="og:image" content={welcome.profile.profile_picture ? welcome.profile.profile_picture_url : "/assets/img.jpg"} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Head>
       <div className="container mx-auto grid grid-cols-1 gap-y-20 md:max-w-7xl w-11/12">
         <div className="" id="header">
           <div>

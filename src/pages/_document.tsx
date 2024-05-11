@@ -10,6 +10,8 @@ export default function Document() {
         <meta name="googlebot" content="noindex,nofollow" />
         <meta name="keywords" content="programmer, full-stack developer, php, javascript,laravel,nodejs" />
         <link rel="canonical" href="https://sheenazien.my.id" />
+        <meta property="og:site_name" content="Sheenazien Portfolio" />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <body>
         <Main />
