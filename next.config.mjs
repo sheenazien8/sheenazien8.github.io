@@ -10,7 +10,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: process.env.API_HOST.replace('http://', '').replace('https://', '').replace('/api', ''),
         port: '',
-        pathname: '/*',
+        pathname: '/storage/*',
       },
     ],
   },

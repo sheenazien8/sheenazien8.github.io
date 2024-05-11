@@ -255,7 +255,7 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
           <p className="md:text-7xl text-4xl font-bold text-gray-1 mb-5">About Me</p>
           <div>
             <div className="text-gray-3" dangerouslySetInnerHTML={{ __html: welcome?.profile?.about_me }} ></div>
-            <div className="flex text-gray-3 gap-1.5 lg:flex-wrap mt-4 overflow-x-scroll">
+            <div className="flex text-gray-3 gap-1.5 lg:flex-wrap mt-4 overflow-x-scroll md:overflow-x-hidden">
               {skills?.map((skill) => <div key={skill} className="px-10 py-1 bg-gray-5 rounded-full">{skill}</div>)}
             </div>
           </div>
