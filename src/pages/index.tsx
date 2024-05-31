@@ -106,11 +106,14 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
       </Head>
       <div className="container mx-auto grid grid-cols-1 gap-y-20 md:max-w-7xl w-11/12">
         <div className="" id="header">
-          <div>
+          <div className={classNames(
+            "bg-white z-10",
+            isScrolled ? 'fixed left-0 w-full bg-white shadow-md z-10 xl:px-[5rem] md:px-[3rem] px-[1rem] transition-all' : ''
+          )}>
             {/* desktop nav */}
             <nav className={classNames(
               "sm:flex hidden justify-between items-center h-20 transition-all duration-200",
-              isScrolled ? 'fixed inset-0 w-full bg-white shadow-md z-10 xl:px-[5rem] md:px-[3rem] px-[1rem]' : ''
+              // isScrolled ? 'fixed inset-0 w-full bg-white shadow-md z-10 xl:px-[5rem] md:px-[3rem] px-[1rem]' : ''
             )}>
               <div className="flex items-center gap-x-10 text-gray-1">
                 <a className="font-bold text-2xl lg:block hidden" href="#">Sheenazien</a>
@@ -272,7 +275,6 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
               All<i className="ml-2 fa-solid fa-arrow-right"></i></a>
             */}
           </div>
-          {/* tablet > desktop */}
           <div className="flex gap-x-3 overflow-x-scroll lg:overflow-x-hidden">
             {projects?.map((project, index) =>
               <div
@@ -289,6 +291,7 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
                   target="_blank"
                   href={project.url}
                 >
+                  {/* mobile */}
                   <div id={`project-${project.id}`}
                     className={classNames(
                       "flex md:hidden justify-between bg-gray-1 rounded-2xl absolute bottom-5 px-6 py-4 left-10 w-4/5",
@@ -306,6 +309,7 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
                       </svg>
                     </div>
                   </div>
+                  {/* tablet > desktop */}
                   <div id={`project-${project.id}`}
                     className={classNames(
                       "md:flex hidden justify-between py-5 px-12 bg-gray-1 rounded-2xl absolute bottom-10 w-4/5 lg:w-[47vw] md:left-20 lg:left-10 transition-all ease duration-700",
@@ -431,6 +435,9 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
             className="rounded-full h-12 w-12 text-white">
             <Image src="/assets/instagram.svg" alt="" height={40} width={40} />
           </a>
+        </div>
+        <div className="flex justify-center pb-5">
+          <a href="https://www.jagoweb.com/" target="_blank"><img src="https://www.jagoweb.com/image/media/small/media_2109014358png" alt="web hosting murah gratis domain" /></a>
         </div>
       </footer>
     </div >
