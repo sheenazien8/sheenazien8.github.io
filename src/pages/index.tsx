@@ -22,6 +22,13 @@ export async function getServerSideProps() {
     },
   });
 
+  const projects = res.data.projects.map((project, index) => {
+    if (index == 0) project.open = true;
+    return project
+  })
+
+  res.data.projects = projects;
+
   const welcome: Welcome = res.data;
 
   return { props: { welcome } };
