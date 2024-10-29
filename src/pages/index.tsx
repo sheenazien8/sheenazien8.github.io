@@ -443,9 +443,9 @@ export default function Home({ welcome }: InferGetServerSidePropsType<typeof get
             <Image src="/assets/instagram.svg" alt="" height={40} width={40} />
           </a>
         </div>
-        <div className="flex justify-center pb-5">
-          <a href="https://www.jagoweb.com/" target="_blank"><img src="https://www.jagoweb.com/image/media/small/media_2109014358png" alt="web hosting murah gratis domain" /></a>
-        </div>
+        {/* <div className="flex justify-center pb-5"> */}
+        {/*   <a href="https://www.jagoweb.com/" target="_blank"><img src="https://www.jagoweb.com/image/media/small/media_2109014358png" alt="web hosting murah gratis domain" /></a> */}
+        {/* </div> */}
       </footer>
     </div >
   );
