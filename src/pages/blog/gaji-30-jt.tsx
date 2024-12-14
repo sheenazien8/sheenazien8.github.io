@@ -10,6 +10,7 @@ export default function Gaji30Jt() {
         <meta name="keywords" content="tips gaji 2 digit, gaji gede" />
         <meta property="og:site_name" content="Cara mendapatkan uang 30jt perbulan" />
         <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={"/assets/gaji-30-jt.jpg"} />
       </Head>
       <div className="text-center h-screen w-screen bg-black text-white text-5xl font-bold flex items-center justify-center">Kerjo ndes!</div>
     </div>
